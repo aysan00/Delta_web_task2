@@ -47,8 +47,9 @@ var powerPos=0;
     function displayscore()
     { 
       highscore=localStorage.getItem('HighScore');
-      if(score>highscore) {localStorage.setItem('HighScore', score);highscore=score;}
-      window.alert("Well played! your score is: "+score+"\nThe High score is: "+highscore);
+      if(score>highscore) {localStorage.setItem('HighScore', score);highscore=score;
+      localStorage.setItem("highestName", JSON.stringify(playerName));highestName=playerName;}
+      window.alert("Well played! "+ playerName +",your score is: "+score+"\nThe High score is: "+highscore+" by "+localStorage.getItem("highestName"));
     }
    
     const loop = function () {
@@ -172,7 +173,7 @@ var powerPos=0;
      window.requestAnimationFrame(loop);
       }
       }
-   
+   playerName = prompt('Enter your name ')
    window.addEventListener("keydown", controller.keyListener);
    window.addEventListener("keydup", controller.keyListener);
    window.requestAnimationFrame(loop);
