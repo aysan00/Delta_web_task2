@@ -13,6 +13,7 @@ var g2=1;
 var loopCount=1;
 var touchPowerup=0;
 var powerPos=0;
+var highestName=0;
   const controller = {
 
    
